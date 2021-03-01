@@ -78,6 +78,7 @@
             };
 
             request.Request.ID = logoutRequestId;
+            request.SubjectToLogOut.Format = Saml2Constants.NameIdentifierFormats.X509SubjectName;
 
             if (sessionIndex.IsNotNullOrEmpty())
             {

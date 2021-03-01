@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
-
-namespace DemoWebApp
+﻿namespace DemoWebApp
 {
     using DemoWebApp.Data;
     using DemoWebApp.Models;
@@ -12,6 +10,7 @@ namespace DemoWebApp
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
     using Saml2.Authentication.Core.Configuration;
 
     public class Startup
@@ -79,6 +78,7 @@ namespace DemoWebApp
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(routes =>
             {
                 routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
